@@ -33,8 +33,7 @@ namespace FortuneTellerMVC.Controllers
                 return HttpNotFound();
             }
 
-            //int retirementAge;
-
+            //User will retire in certain number of years, based on if age is odd or even.
             if (customer.Age % 2 == 0)
             {
                 ViewBag.RetirementAge = 10;
@@ -45,7 +44,6 @@ namespace FortuneTellerMVC.Controllers
             }
 
             //Vacation home is based on number of siblings user entered.
-            //string vacaHome;
             if (customer.NumberOfSiblings == 0)
             {
                 ViewBag.VacationHome = "New York City";
@@ -73,7 +71,6 @@ namespace FortuneTellerMVC.Controllers
             }
 
             //Mode of transportation is determined by user's favorite color.
-            //string modeTransportation;
             switch (customer.FavoriteColor)
             {
                 case "red":
@@ -106,7 +103,6 @@ namespace FortuneTellerMVC.Controllers
             }
 
             //User's retirement funds are determined by user's birth month.
-            //int cashBank;
             if (customer.BirthMonth >= 1 && customer.BirthMonth <= 4)
             {
                 ViewBag.CashInBank = 250000;
